@@ -417,19 +417,25 @@ function showList() {
 }
 
 function searchEntities() {
-  const query = document.getElementById("search").value.toLowerCase();
+  const query = document
+    .getElementById("search")
+    .value
+    .trim()
+    .toLowerCase();
 
-  const filtered = entities.filter(entity =>
-    entity.name.toLowerCase().includes(query) ||
-    entity.short.toLowerCase().includes(query)
-  );
+  const filtered = entities.filter(entity => {
+    const searchableText = [
+      entity.name,
+      entity.short,
+      entity.description,
+      entity.abilities,
+      entity.warnings,
+      entity.survival,
+      entity.facts
+    ].join(" ").toLowerCase();
+
+    return searchableText.includes(query);
+  });
 
   displayEntities(filtered);
 }
-
-displayEntities(entities);
-
-</script>
-
-</body>
-</html>
