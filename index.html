@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Hotel - DOORS Survival Guide</title>
+<title>The Hotel - Entity Encyclopedia</title>
 
 <style>
 * { box-sizing: border-box; }
@@ -19,15 +19,14 @@ body {
 header {
   background: #1c1510;
   border-bottom: 2px solid #94703e;
-  padding: 25px 15px;
+  padding: 25px;
   text-align: center;
 }
 
 header h1 {
   color: #d4ad6b;
   letter-spacing: 5px;
-  font-size: 35px;
-  margin: 5px;
+  font-size: 34px;
 }
 
 header p {
@@ -38,43 +37,21 @@ header p {
 nav {
   background: #251a12;
   padding: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  border-bottom: 1px solid #59432a;
+  text-align: center;
 }
 
 nav a {
   color: #d4ad6b;
   text-decoration: none;
+  margin: 12px;
 }
 
-nav a:hover {
-  color: white;
-}
+nav a:hover { color: white; }
 
-.hero {
-  text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(#0009, #100d0a),
-  radial-gradient(ellipse, #59402a, #100d0a);
-}
-
-.hero h2 {
-  font-size: 38px;
-  color: #e5c58d;
-}
-
-.hero p {
-  color: #c1ae91;
-  font-size: 17px;
-}
-
-section {
-  padding: 35px 20px;
-  max-width: 1000px;
+main {
+  max-width: 1050px;
   margin: auto;
+  padding: 25px 18px;
 }
 
 h2 {
@@ -83,44 +60,123 @@ h2 {
   padding-bottom: 10px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+.intro {
+  text-align: center;
+  padding: 30px 10px;
 }
 
-.card {
-  background: #211912;
-  border: 1px solid #72552f;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.card h3 {
-  color: #d9b578;
-}
-
-.card p {
-  color: #c4b49c;
-  line-height: 1.6;
+.intro h2 {
+  border: none;
+  font-size: 32px;
 }
 
 input {
   width: 100%;
-  padding: 13px;
+  padding: 14px;
   background: #211912;
-  border: 1px solid #94703e;
   color: white;
-  margin-bottom: 18px;
+  border: 1px solid #94703e;
   font-size: 16px;
+  margin: 15px 0 25px;
+}
+
+.entity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.entity-card {
+  background: #211912;
+  border: 1px solid #72552f;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.entity-card:hover {
+  border-color: #e1b96e;
+  transform: translateY(-4px);
+}
+
+.entity-card img {
+  width: 100%;
+  height: 175px;
+  object-fit: contain;
+  background: #17110c;
+}
+
+.entity-card h3 {
+  color: #d9b578;
+  margin: 15px;
+}
+
+.entity-card p {
+  color: #bca98e;
+  margin: 0 15px 18px;
+  line-height: 1.5;
+}
+
+button {
+  background: #382719;
+  border: 1px solid #a17b43;
+  color: #e6c58e;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #59402a;
+}
+
+#profile {
+  display: none;
+}
+
+.profile-image {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  background: #1b140e;
+  border: 1px solid #72552f;
+  margin: 15px 0;
+}
+
+.profile-box {
+  background: #211912;
+  border: 1px solid #72552f;
+  padding: 18px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+.profile-box h3 {
+  color: #d4ad6b;
+}
+
+.profile-box p {
+  line-height: 1.7;
+  color: #c4b49c;
+}
+
+.warning {
+  border-left: 4px solid #bd7046;
+}
+
+.survival {
+  border-left: 4px solid #79976b;
 }
 
 footer {
-  background: #1c1510;
-  border-top: 1px solid #94703e;
   text-align: center;
   padding: 25px;
+  background: #1c1510;
+  border-top: 1px solid #94703e;
   color: #927d60;
+  margin-top: 50px;
 }
 </style>
 </head>
@@ -129,167 +185,250 @@ footer {
 
 <header>
   <h1>THE HOTEL</h1>
-  <p>THE OFFICIAL SURVIVAL HANDBOOK</p>
+  <p>ENTITY ENCYCLOPEDIA</p>
 </header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#entities">Entities</a>
-  <a href="#floors">Floors</a>
-  <a href="#tips">Tips</a>
-  <a href="#items">Items</a>
+  <a href="index.html">Home</a>
+  <a href="#entities" onclick="showList()">Entities</a>
 </nav>
 
-<div class="hero" id="home">
-  <h2>WELCOME, GUEST.</h2>
-  <p>Your guide to surviving the hotel... and beyond.</p>
-  <p>Learn about entities, floors, items, secrets and more.</p>
+<main>
+
+<div class="intro" id="intro">
+  <h2>ENTITY DATABASE</h2>
+  <p>
+    Welcome to the entity archives.
+    Learn about the creatures lurking in the hotel
+    and discover how to survive them.
+  </p>
 </div>
 
-<section id="entities">
-  <h2>ENTITY DATABASE</h2>
-  <p>Search for an entity to learn how to survive it.</p>
+<div id="entitySection">
+  <input
+    id="search"
+    placeholder="Search the entity archives..."
+    oninput="searchEntities()"
+  >
 
-  <input id="search" placeholder="Search entities..."
-  oninput="searchEntities()">
+  <div class="entity-grid" id="entityGrid"></div>
+</div>
 
-  <div class="grid" id="entityList">
+<div id="profile">
 
-    <div class="card">
-      <h3>Rush</h3>
-      <p>Warning: Lights flicker before Rush arrives.</p>
-      <p>Survival: Hide in a suitable hiding spot.</p>
-    </div>
+  <button onclick="showList()">← BACK TO ENTITY DATABASE</button>
 
-    <div class="card">
-      <h3>Ambush</h3>
-      <p>Warning: Listen for its approaching sound.</p>
-      <p>Survival: Hide and be ready to hide again when it returns.</p>
-    </div>
+  <h2 id="profileName"></h2>
 
-    <div class="card">
-      <h3>Screech</h3>
-      <p>Warning: You may hear a quiet "psst".</p>
-      <p>Survival: Turn around and look for Screech.</p>
-    </div>
+  <img id="profileImage" class="profile-image"
+       alt="Entity picture">
 
-    <div class="card">
-      <h3>Figure</h3>
-      <p>Warning: A dangerous creature that hunts by sound.</p>
-      <p>Survival: Stay quiet and avoid its path.</p>
-    </div>
-
-    <div class="card">
-      <h3>Seek</h3>
-      <p>Warning: A long hallway and glowing eyes.</p>
-      <p>Survival: Follow the chase path and avoid obstacles.</p>
-    </div>
-
-    <div class="card">
-      <h3>Halt</h3>
-      <p>Warning: A strange hallway encounter.</p>
-      <p>Survival: Follow the turn-around instructions.</p>
-    </div>
-
+  <div class="profile-box">
+    <h3>Description</h3>
+    <p id="description"></p>
   </div>
-</section>
 
-<section id="floors">
-  <h2>FLOOR DIRECTORY</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>The Hotel</h3>
-      <p>The original hotel. Your journey begins here.</p>
-    </div>
-
-    <div class="card">
-      <h3>The Rooms</h3>
-      <p>A hidden area with a different set of dangers.</p>
-    </div>
-
-    <div class="card">
-      <h3>The Backdoor</h3>
-      <p>A dangerous floor with a time-based challenge.</p>
-    </div>
-
-    <div class="card">
-      <h3>The Mines</h3>
-      <p>An underground area filled with new challenges.</p>
-    </div>
+  <div class="profile-box">
+    <h3>Abilities & Behaviour</h3>
+    <p id="abilities"></p>
   </div>
-</section>
 
-<section id="tips">
-  <h2>SURVIVAL TIPS</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Listen Carefully</h3>
-      <p>Sounds can warn you about approaching entities.</p>
-    </div>
-
-    <div class="card">
-      <h3>Check Your Surroundings</h3>
-      <p>Look for hiding spots and useful items.</p>
-    </div>
-
-    <div class="card">
-      <h3>Save Your Items</h3>
-      <p>Think carefully about when to use your equipment.</p>
-    </div>
-
-    <div class="card">
-      <h3>Learn Entity Behavior</h3>
-      <p>Knowing warning signs makes survival easier.</p>
-    </div>
+  <div class="profile-box warning">
+    <h3>⚠ Warning Signs</h3>
+    <p id="warnings"></p>
   </div>
-</section>
 
-<section id="items">
-  <h2>ITEM DATABASE</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Crucifix</h3>
-      <p>Can temporarily restrain many entities.</p>
-    </div>
-
-    <div class="card">
-      <h3>Flashlight</h3>
-      <p>Helps you see in dark areas.</p>
-    </div>
-
-    <div class="card">
-      <h3>Vitamins</h3>
-      <p>Give you a temporary speed boost.</p>
-    </div>
-
-    <div class="card">
-      <h3>Lockpick</h3>
-      <p>Can unlock certain locked doors.</p>
-    </div>
+  <div class="profile-box survival">
+    <h3>Survival Strategy</h3>
+    <p id="survival"></p>
   </div>
-</section>
+
+  <div class="profile-box">
+    <h3>Extra Information</h3>
+    <p id="facts"></p>
+  </div>
+
+</div>
+
+</main>
 
 <footer>
-  <p>THE HOTEL | SURVIVAL HANDBOOK</p>
+  <p>THE HOTEL | ENTITY ENCYCLOPEDIA</p>
   <p>An unofficial Roblox DOORS fan website.</p>
 </footer>
 
 <script>
-function searchEntities() {
-  let input = document.getElementById("search")
-    .value.toLowerCase();
 
-  let cards = document.querySelectorAll("#entityList .card");
+const entities = [
 
-  cards.forEach(card => {
-    card.style.display =
-      card.innerText.toLowerCase().includes(input)
-      ? "block" : "none";
+{
+name: "Rush",
+image: "images/rush.png",
+short: "A fast-moving entity that rushes through rooms.",
+description:
+"Rush is a hostile entity that travels rapidly through the hotel.",
+abilities:
+"Rush travels through a series of rooms and eliminates players caught outside suitable hiding spots.",
+warnings:
+"The lights flicker before Rush arrives. Listen for its approaching sound.",
+survival:
+"When you notice the warning signs, find a suitable hiding spot quickly. Stay hidden until Rush has passed.",
+facts:
+"Rush is one of the first major threats players encounter in the Hotel."
+},
+
+{
+name: "Ambush",
+image: "images/ambush.png",
+short: "A dangerous entity that returns multiple times.",
+description:
+"Ambush is a fast entity known for repeatedly travelling through rooms.",
+abilities:
+"Ambush passes through an area, retreats, and comes back for additional passes.",
+warnings:
+"Listen for Ambush's distinctive approaching sound.",
+survival:
+"Hide in a suitable spot and carefully watch for its return. Do not leave too early.",
+facts:
+"Ambush can make multiple passes before disappearing."
+},
+
+{
+name: "Screech",
+image: "images/screech.png",
+short: "A creature that surprises players in dark rooms.",
+description:
+"Screech is a small, floating entity that can appear in dark areas.",
+abilities:
+"Screech can approach players and attack if they fail to react to it.",
+warnings:
+"Listen for a quiet 'psst' sound.",
+survival:
+"Turn around and look directly at Screech when you hear its warning.",
+facts:
+"Screech is especially associated with darkness."
+},
+
+{
+name: "Figure",
+image: "images/figure.png",
+short: "A powerful creature that hunts using sound.",
+description:
+"Figure is a large, blind entity encountered in important Hotel encounters.",
+abilities:
+"Figure uses sound to locate players and can patrol its surroundings.",
+warnings:
+"Listen for its footsteps and nearby movement.",
+survival:
+"Keep your distance, avoid making unnecessary noise, and use the environment carefully.",
+facts:
+"Figure appears during the Hotel's major encounters."
+},
+
+{
+name: "Seek",
+image: "images/seek.png",
+short: "A mysterious creature that chases players.",
+description:
+"Seek is a black, gooey entity with glowing white eyes.",
+abilities:
+"Seek initiates chase sequences where players must run through rooms and avoid obstacles.",
+warnings:
+"Glowing eyes may appear before a chase begins.",
+survival:
+"Keep moving, follow the correct path, and avoid obstacles during the chase.",
+facts:
+"Seek has more than one chase encounter."
+},
+
+{
+name: "Halt",
+image: "images/halt.png",
+short: "An entity that traps players in a strange hallway.",
+description:
+"Halt is an unusual entity encountered in a special hallway.",
+abilities:
+"Halt appears in front of players and requires them to change direction during the encounter.",
+warnings:
+"Look for the strange blue hallway and listen for its instructions.",
+survival:
+"Turn around when instructed and keep moving in the opposite direction.",
+facts:
+"Halt's encounter tests your ability to react to changing instructions."
+}
+
+];
+
+const grid = document.getElementById("entityGrid");
+
+function displayEntities(list) {
+  grid.innerHTML = "";
+
+  if (list.length === 0) {
+    grid.innerHTML = "<p>No entities found.</p>";
+    return;
+  }
+
+  list.forEach(entity => {
+    const card = document.createElement("div");
+    card.className = "entity-card";
+
+    const img = document.createElement("img");
+    img.src = entity.image;
+    img.alt = entity.name;
+    img.onerror = () => {
+      img.alt = entity.name + " image not uploaded yet";
+    };
+
+    const name = document.createElement("h3");
+    name.textContent = entity.name;
+
+    const description = document.createElement("p");
+    description.textContent = entity.short;
+
+    card.append(img, name, description);
+    card.onclick = () => openProfile(entity);
+
+    grid.appendChild(card);
   });
 }
+
+function openProfile(entity) {
+  document.getElementById("entitySection").style.display = "none";
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("profile").style.display = "block";
+
+  document.getElementById("profileName").textContent = entity.name;
+  document.getElementById("profileImage").src = entity.image;
+  document.getElementById("description").textContent = entity.description;
+  document.getElementById("abilities").textContent = entity.abilities;
+  document.getElementById("warnings").textContent = entity.warnings;
+  document.getElementById("survival").textContent = entity.survival;
+  document.getElementById("facts").textContent = entity.facts;
+
+  window.scrollTo(0, 0);
+}
+
+function showList() {
+  document.getElementById("entitySection").style.display = "block";
+  document.getElementById("intro").style.display = "block";
+  document.getElementById("profile").style.display = "none";
+  window.scrollTo(0, 0);
+}
+
+function searchEntities() {
+  const query = document.getElementById("search").value.toLowerCase();
+
+  const filtered = entities.filter(entity =>
+    entity.name.toLowerCase().includes(query) ||
+    entity.short.toLowerCase().includes(query)
+  );
+
+  displayEntities(filtered);
+}
+
+displayEntities(entities);
+
 </script>
 
 </body>
