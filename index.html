@@ -1,25 +1,296 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-    <style>
-        body {
-            background-color: #171717;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-            padding: 40px;
-        }
 
-        h1 {
-            color: orange;
-        }
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hotel - DOORS Survival Guide</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #100d0a;
+  color: #e8dcc6;
+  font-family: Georgia, serif;
+}
+
+header {
+  background: #1c1510;
+  border-bottom: 2px solid #94703e;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+header h1 {
+  color: #d4ad6b;
+  letter-spacing: 5px;
+  font-size: 35px;
+  margin: 5px;
+}
+
+header p {
+  color: #9c8665;
+  letter-spacing: 3px;
+}
+
+nav {
+  background: #251a12;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid #59432a;
+}
+
+nav a {
+  color: #d4ad6b;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(#0009, #100d0a),
+  radial-gradient(ellipse, #59402a, #100d0a);
+}
+
+.hero h2 {
+  font-size: 38px;
+  color: #e5c58d;
+}
+
+.hero p {
+  color: #c1ae91;
+  font-size: 17px;
+}
+
+section {
+  padding: 35px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #d4ad6b;
+  border-bottom: 1px solid #72552f;
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #211912;
+  border: 1px solid #72552f;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card h3 {
+  color: #d9b578;
+}
+
+.card p {
+  color: #c4b49c;
+  line-height: 1.6;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  background: #211912;
+  border: 1px solid #94703e;
+  color: white;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+footer {
+  background: #1c1510;
+  border-top: 1px solid #94703e;
+  text-align: center;
+  padding: 25px;
+  color: #927d60;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Welcome to My Website!</h1>
-    <p>This is my first website!</p>
+<header>
+  <h1>THE HOTEL</h1>
+  <p>THE OFFICIAL SURVIVAL HANDBOOK</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#entities">Entities</a>
+  <a href="#floors">Floors</a>
+  <a href="#tips">Tips</a>
+  <a href="#items">Items</a>
+</nav>
+
+<div class="hero" id="home">
+  <h2>WELCOME, GUEST.</h2>
+  <p>Your guide to surviving the hotel... and beyond.</p>
+  <p>Learn about entities, floors, items, secrets and more.</p>
+</div>
+
+<section id="entities">
+  <h2>ENTITY DATABASE</h2>
+  <p>Search for an entity to learn how to survive it.</p>
+
+  <input id="search" placeholder="Search entities..."
+  oninput="searchEntities()">
+
+  <div class="grid" id="entityList">
+
+    <div class="card">
+      <h3>Rush</h3>
+      <p>Warning: Lights flicker before Rush arrives.</p>
+      <p>Survival: Hide in a suitable hiding spot.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ambush</h3>
+      <p>Warning: Listen for its approaching sound.</p>
+      <p>Survival: Hide and be ready to hide again when it returns.</p>
+    </div>
+
+    <div class="card">
+      <h3>Screech</h3>
+      <p>Warning: You may hear a quiet "psst".</p>
+      <p>Survival: Turn around and look for Screech.</p>
+    </div>
+
+    <div class="card">
+      <h3>Figure</h3>
+      <p>Warning: A dangerous creature that hunts by sound.</p>
+      <p>Survival: Stay quiet and avoid its path.</p>
+    </div>
+
+    <div class="card">
+      <h3>Seek</h3>
+      <p>Warning: A long hallway and glowing eyes.</p>
+      <p>Survival: Follow the chase path and avoid obstacles.</p>
+    </div>
+
+    <div class="card">
+      <h3>Halt</h3>
+      <p>Warning: A strange hallway encounter.</p>
+      <p>Survival: Follow the turn-around instructions.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="floors">
+  <h2>FLOOR DIRECTORY</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>The Hotel</h3>
+      <p>The original hotel. Your journey begins here.</p>
+    </div>
+
+    <div class="card">
+      <h3>The Rooms</h3>
+      <p>A hidden area with a different set of dangers.</p>
+    </div>
+
+    <div class="card">
+      <h3>The Backdoor</h3>
+      <p>A dangerous floor with a time-based challenge.</p>
+    </div>
+
+    <div class="card">
+      <h3>The Mines</h3>
+      <p>An underground area filled with new challenges.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <h2>SURVIVAL TIPS</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Listen Carefully</h3>
+      <p>Sounds can warn you about approaching entities.</p>
+    </div>
+
+    <div class="card">
+      <h3>Check Your Surroundings</h3>
+      <p>Look for hiding spots and useful items.</p>
+    </div>
+
+    <div class="card">
+      <h3>Save Your Items</h3>
+      <p>Think carefully about when to use your equipment.</p>
+    </div>
+
+    <div class="card">
+      <h3>Learn Entity Behavior</h3>
+      <p>Knowing warning signs makes survival easier.</p>
+    </div>
+  </div>
+</section>
+
+<section id="items">
+  <h2>ITEM DATABASE</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Crucifix</h3>
+      <p>Can temporarily restrain many entities.</p>
+    </div>
+
+    <div class="card">
+      <h3>Flashlight</h3>
+      <p>Helps you see in dark areas.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vitamins</h3>
+      <p>Give you a temporary speed boost.</p>
+    </div>
+
+    <div class="card">
+      <h3>Lockpick</h3>
+      <p>Can unlock certain locked doors.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>THE HOTEL | SURVIVAL HANDBOOK</p>
+  <p>An unofficial Roblox DOORS fan website.</p>
+</footer>
+
+<script>
+function searchEntities() {
+  let input = document.getElementById("search")
+    .value.toLowerCase();
+
+  let cards = document.querySelectorAll("#entityList .card");
+
+  cards.forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(input)
+      ? "block" : "none";
+  });
+}
+</script>
 
 </body>
 </html>
