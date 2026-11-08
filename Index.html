@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fan-made field guide to the entities beyond the doors.">
+  <title>DOORS: The Entities Beyond</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">D</span><span>DOORS <small>THE ENTITIES BEYOND</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home">HOME</a>
+      <a href="#entities">ENTITIES</a>
+      <a href="#survival">SURVIVAL GUIDE</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="pulse"></span> FIELD REPORT // 001</p>
+        <h1>THE DOORS<br><em>ARE OPEN.</em></h1>
+        <p class="hero-copy">Something is waiting on the other side. Learn what lurks beyond, study the signs, and make every room count.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#entities">EXPLORE ENTITIES <span>↗</span></a>
+          <a class="button button-ghost" href="#survival">SURVIVAL GUIDE</a>
+        </div>
+        <p class="fan-note">AN UNOFFICIAL FAN-MADE FAN SITE</p>
+      </div>
+      <div class="door-art" aria-label="Stylized ominous red-lit doorway illustration">
+        <div class="door-glow"></div><div class="door-frame"><div class="door-panel"><span class="door-number">?</span><span class="door-handle"></span></div></div>
+        <div class="floor-line"></div>
+        <div class="art-label">DO NOT LOOK BACK</div>
+      </div>
+      <div class="hero-bottom"><span>UNKNOWN LOCATION</span><span>STATUS: UNSTABLE</span><span>KEEP MOVING →</span></div>
+    </section>
+
+    <section class="section" id="entities">
+      <div class="section-heading">
+        <div><p class="eyebrow">THREAT DATABASE // 01</p><h2>ENTITY <em>ARCHIVE</em></h2></div>
+        <p class="section-intro">A growing field guide. Select a report to reveal its notes.</p>
+      </div>
+      <div class="entity-grid">
+        <article class="entity-card">
+          <div class="entity-symbol symbol-rush">R</div><div class="entity-meta">THREAT 001 / HIGH</div>
+          <h3>THE RUSH</h3><p>A sudden presence. The warning signs matter more than the noise.</p>
+          <button class="details-button" data-detail="When you suspect a fast-moving threat, stay alert and look for a safe hiding place. Wait until the danger has clearly passed before moving on.">OPEN FIELD NOTES <span>↗</span></button>
+        </article>
+        <article class="entity-card">
+          <div class="entity-symbol symbol-eyes">◉</div><div class="entity-meta">THREAT 002 / CAUTION</div>
+          <h3>THE WATCHER</h3><p>A gaze in the dark. Some things are best left undisturbed.</p>
+          <button class="details-button" data-detail="Avoid focusing on suspicious glowing shapes. Keep your attention on the route ahead and follow the game's visual cues.">OPEN FIELD NOTES <span>↗</span></button>
+        </article>
+        <article class="entity-card">
+          <div class="entity-symbol symbol-hide">?</div><div class="entity-meta">THREAT 003 / UNKNOWN</div>
+          <h3>THE UNKNOWN</h3><p>No confirmed pattern. Treat every encounter as a new report.</p>
+          <button class="details-button" data-detail="This entry is a placeholder for your own discoveries. Add verified observations as you play and keep rumors separate from confirmed information.">OPEN FIELD NOTES <span>↗</span></button>
+        </article>
+      </div>
+      <div class="detail-panel" id="detailPanel" aria-live="polite"><span class="detail-label">FIELD NOTES</span><p>Select an entity report to view its notes.</p></div>
+    </section>
+
+    <section class="survival-section" id="survival">
+      <div class="section-heading">
+        <div><p class="eyebrow">MANUAL // 02</p><h2>STAY <em>ALIVE.</em></h2></div>
+        <p class="section-intro">A few reminders for your next run.</p>
+      </div>
+      <div class="survival-list">
+        <div><span>01</span><p><b>PAY ATTENTION</b><small>Audio and visual cues can warn you that something is near.</small></p></div>
+        <div><span>02</span><p><b>LEARN THE ROOM</b><small>Notice exits, hiding places, and useful objects as you explore.</small></p></div>
+        <div><span>03</span><p><b>DON'T PANIC</b><small>Take a moment to identify what the game is telling you.</small></p></div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <p class="eyebrow">END OF TRANSMISSION</p>
+      <h2>THERE IS ALWAYS<br><em>ANOTHER DOOR.</em></h2>
+      <p>This is an unofficial fan-made project. It is not affiliated with or endorsed by the creators of DOORS or Roblox. Add your own theories, discoveries, and original artwork as the archive grows.</p>
+      <a class="button button-primary" href="#home">BACK TO THE ENTRANCE ↑</a>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> DOORS: THE ENTITIES BEYOND</span><span>UNOFFICIAL FAN PROJECT</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
